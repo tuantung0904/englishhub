@@ -35,7 +35,21 @@ import HelloWorld from './components/HelloWorld.vue'
             </div>
           </div>
 
-          <RouterView />
+
+          <div class="PageContent">
+            <div class="ContentLeft">
+              <RouterView />
+            </div>
+            <div class="ContentRight">
+              <img class="BigLogo" src="/src/assets/images/BigLogo-B8ylSlHo.png" />
+              <img class="Sticker Sticker1" src="/src/assets/images/sticker1-B5DMJB1G.png" />
+              <img class="Sticker Sticker2" src="/src/assets/images/sticker2-gGfY4Bd0.png" />
+              <img class="Sticker Sticker3" src="/src/assets/images/sticker3-yUUXBlou.png" />
+            </div>
+          </div>
+
+
+
         </div>
       </div>
 
@@ -188,5 +202,66 @@ body {
   box-shadow: 5px 5px 5px #0000008c;
   display: flex;
   flex-direction: column
+}
+
+.PageContent {
+  flex-grow: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  font-family: BDLifelessGrotesk
+}
+
+.ContentLeft {
+  display: flex;
+  flex-direction: column;
+  margin-top: 15px;
+  padding: 15px 30px;
+  background-color: #fff;
+  border-radius: 0 0 0 10px;
+  border-right: 5px solid #E2AB2D;
+  max-height: 100%;
+  color: #8e8e8e
+}
+
+
+
+.ContentRight {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px
+}
+
+.ContentRight .BigLogo {
+  max-width: 100%
+}
+
+.ContentRight .Sticker {
+  position: fixed;
+  z-index: 99;
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+  margin: 0 auto
+}
+
+.ContentRight .Sticker1 {
+  height: 75vh;
+  bottom: 0;
+  right: 1vw
+}
+
+.ContentRight .Sticker2 {
+  height: 30vh;
+  bottom: 0vh;
+  left: 50vw
+}
+
+.ContentRight .Sticker3 {
+  height: 22vh;
+  bottom: 60vh;
+  left: 40vw
 }
 </style>
