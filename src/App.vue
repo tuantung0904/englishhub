@@ -1,23 +1,48 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from './components/HelloWorld.vue'
+
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
+  <div class="page-content">
+    <div class="page-content">
+      <div class="Page">
+        <div class="PageContentWrapper">
+          <div class="Navbar">
+            <div class="LogoDiv">
+              <RouterLink to="/">
+                <img class="Logo" src="/src/assets/images/logo-header.png" alt="Logo" />
+              </RouterLink>
+            </div>
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
+            <div class="NavButtons">
+              <nav>
+                <RouterLink class="nav-button" to="/">Về TEH</RouterLink>
+                <RouterLink class="nav-button" to="/khoa-hoc">Khoá học</RouterLink>
+                <RouterLink class="nav-button" to="/trai-nghiem">Trải nghiệm</RouterLink>
+                <RouterLink class="nav-button" to="/thu-vien">Thư viện</RouterLink>
+                <RouterLink class="nav-button" to="/su-kien">Sự kiện</RouterLink>
+                <RouterLink class="nav-button" to="/lien-he">Liên hệ</RouterLink>
+              </nav>
+            </div>
 
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
+            <div class="LoginButtonDiv">
+              <a href="/login"><button class="nav-button">
+                  <p class="ButtonText">Đăng nhập</p>
+                </button>
+              </a>
+            </div>
+          </div>
+
+          <RouterView />
+        </div>
+      </div>
+
+
+
     </div>
-  </header>
-
-  <RouterView />
+  </div>
 </template>
 
 <style scoped>
@@ -81,5 +106,87 @@ nav a:first-of-type {
     padding: 1rem 0;
     margin-top: 1rem;
   }
+}
+
+
+
+.Navbar {
+  display: grid;
+  grid-template-columns: 1fr 4fr 1fr;
+  z-index: 99;
+  border-bottom: 2px solid rgba(255, 255, 255, .6)
+}
+
+.Navbar .LogoDiv {
+  margin: 20px
+}
+
+.Navbar .NavButtons {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.Navbar .LoginButtonDiv {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center
+}
+
+.Navbar .nav-button {
+  padding: 10px 20px;
+  margin: 10px;
+  background: #ffffff80;
+  background: linear-gradient(90deg, #ffffffb3, #fff6);
+  border: 1px solid rgba(255, 255, 255, .5);
+  border-radius: 10px;
+  font-weight: 300;
+  font-size: 14px;
+  color: #fff
+}
+
+.page-content {
+  background-image: url('assets/images/BG1-DiVLq7gB.png');
+}
+
+@font-face {
+  font-family: BDLifelessGrotesk;
+  src: url('assets/fonts/BDLifelessGrotesk-SemiBold.otf') format("opentype");
+}
+
+* {
+  font-family: BDLifelessGrotesk, Arial, Helvetica, sans-serif;
+}
+
+html,
+body {
+  margin: 0;
+  max-width: 100vw;
+  max-height: 100vh;
+  overflow: hidden
+}
+
+.Page {
+  width: 100vw;
+  height: 100vh;
+  max-height: 100vh;
+  overflow-y: hidden;
+  background-position: center center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center
+}
+
+.PageContentWrapper {
+  background: #313cff;
+  background: linear-gradient(180deg, #313cff 3%, #0003ca 98%);
+  border-radius: 10px;
+  width: 90vw;
+  height: 90vh;
+  padding: 15px;
+  box-shadow: 5px 5px 5px #0000008c;
+  display: flex;
+  flex-direction: column
 }
 </style>
