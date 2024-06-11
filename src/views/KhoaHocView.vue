@@ -3,14 +3,14 @@
 
 <template>
     <div class="ContentTitle">
-        <h3>ABOUT US</h3>
+        <h3>LỘ TRÌNH HỌC</h3>
     </div>
     <p class="ContentBody">
-        Lộ trình học:
-        <br />Alpha Hub: 15 sessions
+        Alpha Hub: 15 sessions
         <br />Beta Hub: 20 sessions
         <br />Gamma Hub: 25 sessions
         <br />“Giỏi Tiếng Anh không đồng nghĩa với IELTS cao”
+        <br />
         <br /> 1. Alpha Hub
         <br />Học các kỹ năng nền tảng cho 4 kỹ năng của IELTS
         <br />Làm quen với các hoạt động tự học ở level mới bắt đầu
