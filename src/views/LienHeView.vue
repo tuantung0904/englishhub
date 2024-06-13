@@ -1,38 +1,32 @@
-<script lang="ts">
-import { defineComponent, ref } from 'vue';
+<script setup>
+import { ref } from 'vue';
 import axios from 'axios';
 
-export default defineComponent({
-    setup() {
-        const formData = {
-            name: ref(''),
-            email: ref(''),
-            phone: ref(''),
-            facebook: ref(''),
-        };
+const formData = {
+    name: ref(''),
+    email: ref(''),
+    phone: ref(''),
+    facebook: ref(''),
+};
 
-        const submitForm = async () => {
-            try {
-                const response = await axios.post('http://localhost:3000/api/leads', {
-                    name: formData.name.value,
-                    email: formData.email.value,
-                    phone: formData.phone.value,
-                    facebook: formData.facebook.value,
-                });
+const submitForm = async () => {
+    try {
+        const response = await axios.post('http://localhost:3000/api/leads', {
+            name: formData.name.value,
+            email: formData.email.value,
+            phone: formData.phone.value,
+            facebook: formData.facebook.value,
+        });
 
-                // Xử lý phản hồi thành công từ backend
-                console.log(response);
-                console.log('Lead submitted successfully:', response.data);
-            } catch (error) {
-                // Xử lý lỗi nếu có
-                console.error(error);
-                console.error('Error submitting lead:', error);
-            }
-        };
-
-        return { formData, submitForm };
-    },
-});
+        // Xử lý phản hồi thành công từ backend
+        console.log(response);
+        console.log('Lead submitted successfully:', response.data);
+    } catch (error) {
+        // Xử lý lỗi nếu có
+        console.error(error);
+        console.error('Error submitting lead:', error);
+    }
+};
 </script>
 
 <template>
@@ -51,7 +45,7 @@ export default defineComponent({
             </div>
             <div>
                 <label for="phone">Số điện thoại</label>
-                <input type="tel" id="phone" v-model="formData.phone.value" required>
+                <input type="tel" id="phone" v-model="formData.phone.value">
             </div>
             <div>
                 <label for="facebook">Link Facebook</label>
