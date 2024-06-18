@@ -1,4 +1,12 @@
 <script setup lang="ts">
+import { useRouter } from 'vue-router';
+
+const router = useRouter();
+
+const goToNextPage = () => {
+    router.push('/thu-vien');
+};
+
 </script>
 
 <template>
@@ -8,7 +16,7 @@
     <p class="ContentBody">
         Chưa có dữ liệu
     </p>
-    <button class="ContentCTA">
+    <button class="ContentCTA" @click="goToNextPage">
         <span class="ContentCTAText">SWIPE</span>
         <img class="ContentCTAArrow" src="/src/assets/images/arrow.png" />
     </button>

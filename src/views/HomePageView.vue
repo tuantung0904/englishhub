@@ -1,4 +1,12 @@
 <script setup lang="ts">
+import { useRouter } from 'vue-router';
+
+const router = useRouter();
+
+const goToNextPage = () => {
+    router.push('/khoa-hoc');
+};
+
 </script>
 
 <template>
@@ -22,7 +30,7 @@
         hội.
 
     </p>
-    <button class="ContentCTA">
+    <button class="ContentCTA" @click="goToNextPage">
         <span class="ContentCTAText">SWIPE</span>
         <img class="ContentCTAArrow" src="/src/assets/images/arrow.png" />
     </button>
@@ -62,7 +70,9 @@
 
 .ContentLeft .ContentBody {
     font-size: 16px;
-    text-align: justify
+    text-align: justify;
+    height: 300px;
+    overflow-y: scroll;
 }
 
 .ContentLeft .ContentCTA {

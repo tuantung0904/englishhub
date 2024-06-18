@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import { ref } from 'vue';
 import axios from 'axios';
 
@@ -6,7 +6,6 @@ const formData = {
     name: ref(''),
     email: ref(''),
     phone: ref(''),
-    facebook: ref(''),
 };
 
 const submitForm = async () => {
@@ -15,7 +14,6 @@ const submitForm = async () => {
             name: formData.name.value,
             email: formData.email.value,
             phone: formData.phone.value,
-            facebook: formData.facebook.value,
         });
 
         // Xử lý phản hồi thành công từ backend
@@ -47,17 +45,13 @@ const submitForm = async () => {
                 <label for="phone">Số điện thoại</label>
                 <input type="tel" id="phone" v-model="formData.phone.value">
             </div>
-            <div>
-                <label for="facebook">Link Facebook</label>
-                <input type="url" id="facebook" v-model="formData.facebook.value">
-            </div>
             <button type="submit">Gửi</button>
         </form>
     </div>
-    <button class="ContentCTA">
+    <!-- <button class="ContentCTA">
         <span class="ContentCTAText">SWIPE</span>
         <img class="ContentCTAArrow" src="/src/assets/images/arrow.png" />
-    </button>
+    </button> -->
 </template>
 
 <style scoped>

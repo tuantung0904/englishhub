@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
 
 </script>
 
@@ -38,13 +37,13 @@ import HelloWorld from './components/HelloWorld.vue'
 
           <div class="PageContent">
             <div class="ContentLeft">
+              <img class="Sticker Sticker3" src="/src/assets/images/sticker3-yUUXBlou.png" />
               <RouterView />
             </div>
             <div class="ContentRight">
               <img class="BigLogo" src="/src/assets/images/BigLogo-B8ylSlHo.png" />
               <img class="Sticker Sticker1" src="/src/assets/images/sticker1-B5DMJB1G.png" />
               <img class="Sticker Sticker2" src="/src/assets/images/sticker2-gGfY4Bd0.png" />
-              <img class="Sticker Sticker3" src="/src/assets/images/sticker3-yUUXBlou.png" />
             </div>
           </div>
 
@@ -195,11 +194,12 @@ body {
 .PageContentWrapper {
   background: #313cff;
   background: linear-gradient(180deg, #313cff 3%, #0003ca 98%);
-  border-radius: 10px;
+  border-radius: 5%;
   width: 90vw;
   height: 90vh;
-  padding: 15px;
-  box-shadow: 5px 5px 5px #0000008c;
+  padding: 25px;
+  padding-bottom: 0;
+  box-shadow: 7px 9px 5px #0000008c;
   display: flex;
   flex-direction: column
 }
@@ -215,15 +215,23 @@ body {
   display: flex;
   flex-direction: column;
   margin-top: 15px;
+  margin-left: -25px;
   padding: 15px 30px;
   background-color: #fff;
-  border-radius: 0 0 0 10px;
+  border-radius: 0 0 0 5%;
   border-right: 5px solid #E2AB2D;
   max-height: 100%;
-  color: #8e8e8e
+  color: #8e8e8e;
+  position: relative
 }
 
-
+.ContentLeft .Sticker3 {
+  height: 12vh;
+  top: -3vh;
+  right: -6vw;
+  position: absolute;
+  z-index: 99;
+}
 
 .ContentRight {
   position: relative;
@@ -257,11 +265,5 @@ body {
   height: 30vh;
   bottom: 0vh;
   left: 50vw
-}
-
-.ContentRight .Sticker3 {
-  height: 22vh;
-  bottom: 60vh;
-  left: 40vw
 }
 </style>
